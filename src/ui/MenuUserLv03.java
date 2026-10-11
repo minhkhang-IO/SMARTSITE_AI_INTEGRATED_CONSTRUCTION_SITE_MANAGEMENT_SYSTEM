@@ -5,10 +5,10 @@ import static ui.Draft.pause;
 public class MenuUserLv03 extends MenuUserLv00{    
     @Override
     public void displayOption(){
-        System.out.println("1. Display your information");
-        System.out.println("2. Check-in");
-        System.out.println("3. Check-out");
-        System.out.println("4. Display History Attendance");
+        System.out.println("01. Display your information");
+        System.out.println("02. Check-in");
+        System.out.println("03. Check-out");
+        System.out.println("04. Display History Attendance");
     }
     
     @Override

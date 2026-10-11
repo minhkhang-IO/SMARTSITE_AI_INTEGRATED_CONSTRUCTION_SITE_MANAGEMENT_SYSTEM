@@ -17,7 +17,7 @@ public class MenuUserLv02 extends MenuUserLv03 {
     @Override
     public void displayOption(){
         super.displayOption();
-        System.out.println("5. Take tools");
+        System.out.println("05. Take tools");
     }
     
     @Override
