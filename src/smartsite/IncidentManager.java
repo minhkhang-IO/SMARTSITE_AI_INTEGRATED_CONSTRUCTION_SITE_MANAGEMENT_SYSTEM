@@ -1,4 +1,4 @@
-package smarttite;
+package smartsite;
 
 import java.util.ArrayList;
 import java.util.List;

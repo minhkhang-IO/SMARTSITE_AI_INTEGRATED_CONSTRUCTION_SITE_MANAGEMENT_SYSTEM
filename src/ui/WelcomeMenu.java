@@ -4,9 +4,23 @@ package ui;
 import java.util.Scanner;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+<<<<<<< Updated upstream
 import static ui.Draft.clearConsoleIDE;
+=======
+//import tu package smartsite
+import smartsite.PersonManager;
+import smartsite.AttendanceManager;
+>>>>>>> Stashed changes
 
 public class WelcomeMenu {
+     private final PersonManager pm;
+            private final AttendanceManager am;
+
+            public WelcomeMenu(PersonManager pm,
+                               AttendanceManager am) {
+                this.pm = pm;
+                this.am = am;
+                }
     public void displayWelcomeMenu(){
         Scanner sc = new Scanner(System.in);
         boolean running = true;
@@ -49,7 +63,7 @@ public class WelcomeMenu {
             switch (choice){
                 case (1):
                     clearConsoleIDE();
-                    LoginMenu menuLogin = new LoginMenu();
+                    LoginMenu menuLogin = new LoginMenu(pm,am);
                     menuLogin.displayLoginMenu();
                     break;
                 case (2):

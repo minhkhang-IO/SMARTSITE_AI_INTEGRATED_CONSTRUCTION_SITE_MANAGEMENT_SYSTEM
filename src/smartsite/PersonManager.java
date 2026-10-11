@@ -1,4 +1,4 @@
-package smarttite;
+package smartsite;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -18,6 +18,10 @@ public class PersonManager {
     public PersonManager() {
         people = new Person[10];
         size = 0;
+    }
+
+    PersonManager(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     public boolean addPerson(Person p) {
     if (p == null || p.getid() == null || p.getid().trim().isEmpty()) {
@@ -65,6 +69,22 @@ public class PersonManager {
         }
 
         return true;
+    }
+    //delete
+    @SuppressWarnings("empty-statement")
+    public void deleteByID(String id){
+     Person p = this.findPersonByID(id);
+             if(p==null)
+                 System.out.println("No find id");
+             else {
+                 int a=-1;
+                 for(int i =0; i<size;i++){
+                 if (people[i] == p) {
+                a = i;
+                break;}
+             }
+                 System.out.println("Id has removed");
+             }
     }
     public Person login(String code){
     if(code==null || code.trim().isEmpty()){

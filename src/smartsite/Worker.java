@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package smarttite;
+package smartsite;
 
 /**
  *
@@ -44,6 +44,6 @@ public class Worker extends Person {
 
     @Override
     public String toString() {
-        return super.toString() + " - " + companyName + " - " + contractType;
+        return super.toString() + " | " + companyName + " | " + contractType;
     }
 }
