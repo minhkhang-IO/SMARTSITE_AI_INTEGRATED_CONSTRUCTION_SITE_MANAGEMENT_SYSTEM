@@ -54,20 +54,9 @@ public class Main {
     PersonManager pm = new PersonManager();
      AttendanceManager am = new AttendanceManager();
      //Gia tr? checkin bang code
-      pm.addPerson(new Worker(
-            "P001", "Tran Minh Khang", "W001",
-            "WORKER", "ACTIVE", "BuildCo", "Full-time"
-        ));
-
-        pm.addPerson(new Visitor(
-            "P002", "Bach Gia Huy", "V001",
-            "VISITOR", "ACTIVE", "Site Visit", "Manager A"
-        ));
-
-        pm.addPerson(new Person(
-            "P003", "Dang Hai Dang", "S001",
-            "SAFETY_OFFICER", "ACTIVE"
-        ));
+    pm.addPerson(new Worker("P001", "Tran Minh Khang", "W001", "WORKER", "ACTIVE", "BuildCo", "Full-time"));
+    pm.addPerson(new Visitor("P002", "Bach Gia Huy", "V001", "VISITOR", "ACTIVE", "Site Visit", "Manager A"));
+    pm.addPerson(new Person("P003", "Dang Hai Dang", "S001", "SAFETY_OFFICER", "ACTIVE"));
 
         WelcomeMenu welcome = new WelcomeMenu(pm, am);
         welcome.displayWelcomeMenu();
@@ -83,13 +72,13 @@ public class Main {
         System.out.println("Ðang nhap thanh cong:" +currentUser.getFullName());
     }
     //Sau khi dang nhap thanh cong thi co the check out
-    boolean isSuccess = am.checkOut(code);
+    /*  boolean isSuccess = am.checkOut(code);
     if (isSuccess){
-        System.out.println("Checkout thanh cong");
+    System.out.println("Checkout thanh cong");
     }
-    else 
+    else
     {
-        System.out.println("Chua checkint");
-    }
+    System.out.println("Chua checkint");
+    }*/
 }
 }
