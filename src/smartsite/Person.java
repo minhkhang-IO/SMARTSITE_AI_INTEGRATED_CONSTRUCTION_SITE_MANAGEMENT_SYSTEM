@@ -8,13 +8,13 @@ package smartsite;
  *
  * @author Minh_Khang
  */
-public class Person {
+public abstract class Person implements Validatable {
 
-    private String id;
-    private String fullName;
-    private String code;
-    private String role;
-    private String status;
+    protected String id;
+    protected String fullName;
+    protected String code;
+    protected String role;
+    protected String status;
 
     public Person() {
     }
@@ -27,11 +27,33 @@ public class Person {
         this.status = status;
     }
 
-    public String getid() {
+    @Override
+    public boolean isValid() {
+        if (isBlank(id)) {
+            return false;
+        }
+        if (isBlank(fullName)) {
+            return false;
+        }
+        if (isBlank(code)) {
+            return false;
+        }
+        if (isBlank(role)) {
+            return false;
+        }
+        if (isBlank(status)) {
+            return false;
+        }
+        return true;
+    }
+
+    public abstract String getRoleDescription();
+
+    public String getId() {
         return id;
     }
 
-    public void setid(String id) {
+    public void setId(String id) {
         if (isBlank(id)) {
             throw new IllegalArgumentException("Person id cannot be empty.");
         }
@@ -43,7 +65,7 @@ public class Person {
     }
 
     public void setFullName(String fullName) {
-         if (isBlank(fullName)) {
+        if (isBlank(fullName)) {
             throw new IllegalArgumentException("Full name cannot be empty.");
         }
         this.fullName = fullName;
@@ -85,7 +107,8 @@ public class Person {
     public String toString() {
         return id + " - " + fullName + " - " + role + " - " + status;
     }
-    private static boolean isBlank(String value) {
-    return value == null || value.trim().isEmpty();
-}
+
+    protected static boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
+    }
 }
