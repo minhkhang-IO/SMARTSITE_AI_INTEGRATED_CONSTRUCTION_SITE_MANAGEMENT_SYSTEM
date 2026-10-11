@@ -105,6 +105,14 @@ public class PersonManager {
     System.out.println("=== DANH SACH NGUOI DUNG SMARTSITE ===");
     for (int i = 0; i < size; i++) {
         System.out.println(people[i]);
+    } //output
+    
+}
+   public void displayRoleDescriptions() {
+    for (int i = 0; i < size; i++) {
+        System.out.println(
+            people[i].getRoleDescription()
+        );
     }
 }
 }

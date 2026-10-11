@@ -58,4 +58,8 @@ public class Visitor extends Person {
     public String toString() {
         return super.toString() + " - Purpose: " + visitPurpose + " - Host: " + hostName;
     }
+    @Override
+    public String getRoleDescription() {
+    return "Visitor: Visits the construction site.";
+}
 }

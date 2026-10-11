@@ -46,4 +46,8 @@ public class Worker extends Person {
     public String toString() {
         return super.toString() + " | " + companyName + " | " + contractType;
     }
+    @Override
+    public String getRoleDescription() {
+    return "Worker: Performs construction tasks.";
+}
 }

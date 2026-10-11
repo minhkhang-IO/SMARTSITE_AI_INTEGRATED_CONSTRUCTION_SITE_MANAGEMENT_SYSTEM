@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package smarttite;
+package smartsite;
 
 /**
  *
@@ -48,5 +48,8 @@ public class RestrictedZone extends Zone {
         }
         this.pinCode = pinCode;
     }   
-    
+    @Override
+    public boolean isAccessRestricted() {
+    return true;
+}
 }

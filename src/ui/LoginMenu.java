@@ -1,15 +1,11 @@
 
-package ui;
+   package ui;
 
-import smartsite.Person;
 import java.util.Scanner;
-<<<<<<< Updated upstream
-
-=======
-import smartsite.AttendanceManager;
+import smartsite.Person;
 import smartsite.PersonManager;
->>>>>>> Stashed changes
-public class LoginMenu {
+import smartsite.AttendanceManager;
+//public class LoginMenu {
     /*public void displayLoginMenu(){
     Scanner sc = new Scanner(System.in);
     boolean running = true;
@@ -68,7 +64,7 @@ public class LoginMenu {
     
     }//while(running)
     }*///dislplayLoginMenu()
-       private final PersonManager pm;
+       /*private final PersonManager pm;
     private final AttendanceManager am;
 
 <<<<<<< Updated upstream
@@ -190,4 +186,58 @@ public class LoginMenu {
         }
     }
 >>>>>>> Stashed changes
-}//class
+}//class */
+public class LoginMenu {
+    private final PersonManager pm;
+    private final AttendanceManager am;
+
+    public LoginMenu(PersonManager pm, AttendanceManager am) {
+        this.pm = pm;
+        this.am = am;
+    }
+
+    public void displayLoginMenu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("========================================");
+        System.out.println("          SMARTSITE LOGIN              ");
+        System.out.println("========================================");
+        System.out.print("Enter your personnel code (e.g., W001, V001, S001): ");
+        String code = sc.nextLine().trim();
+
+        Person currentUser = pm.login(code);
+        if (currentUser == null) {
+            System.out.println("[!] Invalid code or account is inactive!");
+            return;
+        }
+
+        System.out.println("\n[+] Login successful!");
+        System.out.println("[+] Welcome, " + currentUser.getFullName() + " [" + currentUser.getRole() + "]");
+
+        String role = currentUser.getRole();
+        if (role == null) {
+            System.out.println("[!] Account has no role assigned.");
+            return;
+        }
+
+        // Điều hướng Menu theo Role
+                switch (role.trim().toUpperCase()) {
+            case "SITE_MANAGER":
+            case "SAFETY_OFFICER":
+                new MenuUserLv01().displayMenuLv(currentUser, pm, am);
+                break;
+
+            case "WORKER":
+            case "CONTRACTOR":
+                new MenuUserLv02().displayMenuLv(currentUser, pm, am);
+                break;
+
+            case "VISITOR":
+                new MenuUserLv03().displayMenuLv(currentUser, pm, am);
+                break;
+
+            default:
+                System.out.println("[!] Unknown role: " + role);
+                ui.Draft.pause();
+        }
+    }
+}

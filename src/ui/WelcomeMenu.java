@@ -4,17 +4,13 @@ package ui;
 import java.util.Scanner;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-<<<<<<< Updated upstream
 import static ui.Draft.clearConsoleIDE;
-=======
-//import tu package smartsite
 import smartsite.PersonManager;
 import smartsite.AttendanceManager;
->>>>>>> Stashed changes
 
 public class WelcomeMenu {
      private final PersonManager pm;
-            private final AttendanceManager am;
+     private final AttendanceManager am;
 
             public WelcomeMenu(PersonManager pm,
                                AttendanceManager am) {
