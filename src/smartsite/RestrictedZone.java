@@ -22,8 +22,8 @@ public class RestrictedZone extends Zone {
 
     public RestrictedZone( String zoneId, String zoneName, String zoneDetails, int accessLevel, String pinCode) {
         super(zoneId, zoneName, zoneDetails);
-        this.accessLevel = accessLevel;
-        this.pinCode = pinCode;
+        this.setAccessLevel(accessLevel);
+        this.setPinCode(pinCode);
     }
 
     public int getAccessLevel() {
@@ -34,7 +34,7 @@ public class RestrictedZone extends Zone {
         return pinCode;
     }
 
-    public void setAccessLevel(int accessLevel) {
+    public final void setAccessLevel(int accessLevel) {
         if (accessLevel < 0 ){
            throw new IllegalArgumentException("Access level must be greater than or equal to 0!");
         }
@@ -42,7 +42,7 @@ public class RestrictedZone extends Zone {
 
     }
 
-    public void setPinCode(String pinCode) {
+    public final void setPinCode(String pinCode) {
         if (pinCode.isEmpty()){
             System.out.println("Pin Code can not be empty!");
         }
@@ -50,6 +50,18 @@ public class RestrictedZone extends Zone {
     }   
     @Override
     public boolean isAccessRestricted() {
-    return true;
-}
+        return true;
+    }
+
+    @Override
+    public boolean isValid() {
+        return super.isValid() 
+            && (accessLevel >= 0 && accessLevel <= 2) 
+            && (pinCode != null && pinCode.trim().matches("^[A-Z]{3}\\d{3}$"));
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " | Restricted [Access Level: " + accessLevel + ", Pin: " + pinCode + "]";
+    }
 }
