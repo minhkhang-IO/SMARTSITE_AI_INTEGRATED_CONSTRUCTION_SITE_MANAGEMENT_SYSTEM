@@ -21,7 +21,7 @@ public class Worker extends Person {
         this.contractType = contractType;
     }
 
-    // Constructor ngắn, khớp với dòng new Worker(...) trong Main
+    // Constructor rong
     public Worker(String id, String fullName, String code, String role, String status) {
         this(id, fullName, code, role, status, "", "");
     }
@@ -49,5 +49,10 @@ public class Worker extends Person {
     @Override
     public String getRoleDescription() {
     return "Worker: Performs construction tasks.";
+}
+
+    @Override
+    public boolean isValid() {
+    return super.isValid() && companyName != null && !companyName.trim().isEmpty();
 }
 }

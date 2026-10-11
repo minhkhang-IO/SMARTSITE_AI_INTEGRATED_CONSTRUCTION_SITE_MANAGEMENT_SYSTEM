@@ -29,7 +29,9 @@ public class PersonManager {
     }
 
     if (size >= people.length) {
-        return false;
+        Person[] temp = new Person[people.length * 2];
+        System.arraycopy(people, 0, temp, 0, people.length);
+        people = temp;
     }
 
     if (findPersonByID(p.getid()) != null) {

@@ -91,4 +91,7 @@ public class Person {
     public String getRoleDescription() {
     return "Role: " + role;
 }
+    public boolean isValid() {
+    return id != null && !id.trim().isEmpty() && fullName != null && !fullName.trim().isEmpty();
+}
 }
