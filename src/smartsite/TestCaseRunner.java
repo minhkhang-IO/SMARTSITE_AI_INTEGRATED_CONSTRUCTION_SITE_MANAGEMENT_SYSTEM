@@ -20,7 +20,7 @@ public interface Validatable {
 
         // --- TC02: Constructor chaining (Worker calls super) ---
         System.out.print("[TC02] Constructor chaining (super): ");
-        if ("P001".equals(w1.getid()) && "Tran Minh Khang".equals(w1.getFullName())) {
+        if ("P001".equals(w1.getId()) && "Tran Minh Khang".equals(w1.getFullName())) {
             System.out.println("PASSED -> Common fields (id, name) initialized via super(...)");
         } else {
             System.out.println("FAILED");

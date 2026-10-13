@@ -19,15 +19,15 @@ public class SafetyOfficer extends Person {
         super();
     }
 
-    public SafetyOfficer(String id, String fullName, String code, String role, String status,/* int accessLevel, */String inspectionLicense) {
+    public SafetyOfficer(String id, String fullName, String code, String role, String status, int accessLevel, String inspectionLicense) {
         super(id, fullName, code, role, status);
       //  this.accessLevel = accessLevel;
         this.inspectionLicense = inspectionLicense;
     }
 
    
-  public SafetyOfficer(String id, String fullName, String code, String status/*, int accessLevel*/, String inspectionLicense) {
-    this(id, fullName, code, "SAFETY_OFFICER", status, /*accessLevel,*/ inspectionLicense);
+  public SafetyOfficer(String id, String fullName, String code, String status, int accessLevel, String inspectionLicense) {
+    this(id, fullName, code, "SAFETY_OFFICER", status, accessLevel, inspectionLicense);
 }
   
 //    public int getAccessLevel() {

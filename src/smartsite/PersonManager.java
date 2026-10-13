@@ -24,7 +24,7 @@ public class PersonManager {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     public boolean addPerson(Person p) {
-    if (p == null || p.getid() == null || p.getid().trim().isEmpty()) {
+    if (p == null || p.getId() == null || p.getId().trim().isEmpty()) {
         return false;
     }
 
@@ -34,7 +34,7 @@ public class PersonManager {
         people = temp;
     }
 
-    if (findPersonByID(p.getid()) != null) {
+    if (findPersonByID(p.getId()) != null) {
         return false;
     }
 
@@ -47,7 +47,7 @@ public class PersonManager {
         if (id == null) return null;
 
         for (int i = 0; i < size; i++) {
-            if (people[i].getid().equalsIgnoreCase(id.trim())) {
+            if (people[i].getId().equalsIgnoreCase(id.trim())) {
                 return people[i];
             }
         }
