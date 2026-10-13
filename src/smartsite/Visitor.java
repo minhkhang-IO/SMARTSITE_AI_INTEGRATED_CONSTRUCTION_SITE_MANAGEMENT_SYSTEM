@@ -12,9 +12,10 @@ public class Visitor extends Person {
 
     private String visitPurpose;
     private String hostName;
-    private int accessLevel;
+ //   private int accessLevel;
 
     public Visitor() {
+        super();
     }
 
     public Visitor(String id, String fullName, String code, String role, String status,
@@ -24,8 +25,8 @@ public class Visitor extends Person {
         this.hostName = hostName;
     }
 
-    public Visitor(String id, String fullName, String code, String role, String status) {
-        this(id, fullName, code, role, status, "#", "#");
+    public Visitor(String id, String fullName, String code, String status, String visitPurpose, String hostName ) {
+        this(id, fullName, code, "VISITOR", status, visitPurpose, hostName);
     }
 
     public Visitor(String visitPurpose, String hostName) {
@@ -49,20 +50,11 @@ public class Visitor extends Person {
         this.hostName = hostName;
     }
 
-    public int getAccessLevel() {
-        return accessLevel;
-    }
-
-    public final void setAccessLevel(int accessLevel) {
-        if (accessLevel < 0 || accessLevel > 2) {
-            throw new IllegalArgumentException("Access level must be between 0 and 2!");
-        }
-        this.accessLevel = accessLevel;
-    }
+  
 
     @Override
     public String getRoleDescription() {
-        return "Site Manager oversees site operations, manages zone access, and approves safety logs (Access Level: " + accessLevel + ").";
+        return "Visitor can go to construction without permission to do anything."/* (Access Level: " + accessLevel + ")."*/;
     }
 
     @Override
@@ -74,8 +66,4 @@ public class Visitor extends Person {
     public String toString() {
         return super.toString() + " - Purpose: " + visitPurpose + " - Host: " + hostName;
     }
-    @Override
-    public String getRoleDescription() {
-    return "Visitor: Visits the construction site.";
-}
 }
