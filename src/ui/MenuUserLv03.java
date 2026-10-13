@@ -40,5 +40,4 @@ public class MenuUserLv03 extends MenuUserLv00{
                 pause();
         }
     }
-    
 }//class

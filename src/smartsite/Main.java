@@ -56,7 +56,7 @@ public class Main {
      //Gia tr? checkin bang code
     pm.addPerson(new Worker("P001", "Tran Minh Khang", "W001", "WORKER", "ACTIVE", "BuildCo", "Full-time"));
     pm.addPerson(new Visitor("P002", "Bach Gia Huy", "V001", "VISITOR", "ACTIVE", "Site Visit", "Manager A"));
-    pm.addPerson(new Person("P003", "Dang Hai Dang", "S001", "SAFETY_OFFICER", "ACTIVE"));
+    pm.addPerson(new SafetyOfficer("P003", "Dang Hai Dang", "S001", "SAFETY_OFFICER", "ACTIVE", 2, "LIC-01"));
 
         WelcomeMenu welcome = new WelcomeMenu(pm, am);
         welcome.displayWelcomeMenu();

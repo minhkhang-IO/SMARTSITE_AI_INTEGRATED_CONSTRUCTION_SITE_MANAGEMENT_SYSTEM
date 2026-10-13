@@ -116,13 +116,13 @@ public class ZoneManager2 {
 
     public boolean updateZoneById(String zoneId, String newName, String newDescription) {
         Zone z = this.findZoneById(zoneId);
-
+        
         if (z != null) {
             try {
-                z.setZoneName(newName);
+                z.setZoneName(newName);  
                 z.setZoneDetails(newDescription);
                 return true; // 
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException e) { // I
                 System.out.println("Update failed! " + e.getMessage() + "is not valid ");
                 return false;
             }
@@ -215,21 +215,22 @@ public class ZoneManager2 {
                 }
                 break;
             }
-            while (true) {
-                System.out.println("Enter Restricted Zone Access Level (0-2) : ");
-                try {
-                    accessLevel = Integer.parseInt(sc.nextLine().trim());
-                    if (accessLevel < 0 || accessLevel > 2) {
-                        System.out.println("Access Level must from 0 to 2 ! ");
-                        continue;
-                    }
-                    break;
-                } catch (NumberFormatException e) {
-                    System.out.println("Invalid input! Access level must be one of the numbers 0, 1, or 2 !");
-                }
-            }
+//            while (true) {
+//                System.out.println("Enter Restricted Zone Access Level (0-2) : ");
+//                try {
+//                    accessLevel = Integer.parseInt(sc.nextLine().trim());
+//                    if (accessLevel < 0 || accessLevel > 2) {
+//                        System.out.println("Access Level must from 0 to 2 ! ");
+//                        continue;
+//                    }
+//                    break;
+//                } catch (NumberFormatException e) {
+//                    System.out.println("Invalid input! Access level must be one of the numbers 0, 1, or 2 !");
+//                }
+//            }
+// không nên bỏ phần này vì Person sẽ gán level sẵn nhưng zone thì phải nhập và không cố định giữa các zone 
             try {
-                RestrictedZone rz = new RestrictedZone(id, name, description, accessLevel, pinCode);
+                RestrictedZone rz = new RestrictedZone(id, name, description,/* accessLevel,*/ pinCode);
                 this.list.add(rz);
                 System.out.println("Add Restricted Zone [" + id + "] succeesfully! ");
             } catch (IllegalArgumentException e) {
@@ -243,7 +244,7 @@ public class ZoneManager2 {
         System.out.println("List of Restricted Zones: ");
         for (Zone z : this.list) {
             if (z.isAccessRestricted()) {
-                System.out.println(z);
+                 System.out.println(z);
             }
         }
     }

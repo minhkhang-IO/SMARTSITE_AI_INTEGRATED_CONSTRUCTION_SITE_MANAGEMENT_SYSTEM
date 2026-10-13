@@ -112,7 +112,3 @@ public abstract class Person implements Validatable {
         return value == null || value.trim().isEmpty();
     }
 }
-    public boolean isValid() {
-    return id != null && !id.trim().isEmpty() && fullName != null && !fullName.trim().isEmpty();
-}
-}
