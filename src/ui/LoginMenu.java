@@ -222,19 +222,20 @@ public class LoginMenu {
         // Điều hướng Menu theo Role
                 switch (role.trim().toUpperCase()) {
             case "SITE_MANAGER":
+                new UserSiteManagerMenu().displayMenuLv(currentUser, pm, am);
+                break;
             case "SAFETY_OFFICER":
-                new MenuUserLv01().displayMenuLv(currentUser, pm, am);
+                new UserSafetyOfficerMenu().displayMenuLv(currentUser, pm, am);
                 break;
-
             case "WORKER":
+                new UserWorkerMenu().displayMenuLv(currentUser, pm, am);
+                break;
             case "CONTRACTOR":
-                new MenuUserLv02().displayMenuLv(currentUser, pm, am);
+                new UserContractorMenu().displayMenuLv(currentUser, pm, am);
                 break;
-
             case "VISITOR":
-                new MenuUserLv03().displayMenuLv(currentUser, pm, am);
+                new UserVisitorMenu().displayMenuLv(currentUser, pm, am);
                 break;
-
             default:
                 System.out.println("[!] Unknown role: " + role);
                 ui.Draft.pause();

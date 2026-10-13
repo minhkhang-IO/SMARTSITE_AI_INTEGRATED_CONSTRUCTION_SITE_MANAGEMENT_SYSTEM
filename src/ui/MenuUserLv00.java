@@ -13,9 +13,7 @@ public abstract class MenuUserLv00 {
     protected PersonManager pm;
     protected AttendanceManager am;
 
-    /**
-     * Hàm điều khiển luồng menu chung cho tất cả các Role
-     */
+    //hàm chạy chính
     public void displayMenuLv(Person currentUser, PersonManager pm, AttendanceManager am) {
         // Lưu lại dữ liệu truyền vào
         this.currentUser = currentUser;
@@ -51,9 +49,7 @@ public abstract class MenuUserLv00 {
         } // while
     } // displayMenuLv
 
-    /**
-     * Hiển thị Header menu lấy trực tiếp tên và role của người đăng nhập
-     */
+    //hiển thị Header chung tùy theo role
     public void displayHeader() {
         String role = currentUser.getRole();
         String name = currentUser.getFullName();
@@ -63,22 +59,16 @@ public abstract class MenuUserLv00 {
         System.out.println("Welcome " + role + ": " + name + "!");
         System.out.println("What do you want to do?");
     }
-
-    /**
-     * Phương thức trừu tượng: Mỗi cấp Menu (Lv01, Lv02, Lv03) sẽ tự in các chức năng riêng của mình
-     */
+    
+    //hiển thị khác nhau với mỗi role
     abstract void displayOption();
 
-    /**
-     * Nút Logout chung cho mọi menu
-     */
+    //hiển thị chung ở cuối option cho tất cả role
     public void displayLogOut() {
         System.out.println("0. Log out");
     }
 
-    /**
-     * Phương thức trừu tượng: Mỗi cấp Menu sẽ tự xử lý các chức năng tương ứng
-     */
+    //xử lý chức năng khác nhau với mỗi role
     abstract void chooseOption(int choice);
 
 } // class

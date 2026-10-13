@@ -91,7 +91,7 @@ public class MenuUserLv02 extends MenuUserLv03 {
                 if (role.isEmpty()) {
                     role = "WORKER";
                 }
-                newPerson = new Person(id, name, code, role, "ACTIVE");
+                newPerson = new Worker(id, name, code, role, "ACTIVE");
                 break;
         }
 
