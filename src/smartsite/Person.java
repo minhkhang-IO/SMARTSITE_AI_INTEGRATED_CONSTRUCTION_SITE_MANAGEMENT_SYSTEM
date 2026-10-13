@@ -108,14 +108,6 @@ public abstract class Person implements Validatable {
         return id + " - " + fullName + " - " + role + " - " + status;
     }
 
-    public String getid() {
-        return id;
-    }
-
-    public void setid(String id) {
-        setId(id);
-    }
-
     protected static boolean isBlank(String value) {
         return value == null || value.trim().isEmpty();
     }
