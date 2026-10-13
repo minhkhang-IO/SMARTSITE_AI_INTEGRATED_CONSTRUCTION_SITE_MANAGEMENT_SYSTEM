@@ -128,65 +128,8 @@ import smartsite.AttendanceManager;
         
         }//while(running)
     }//dislplayLoginMenu()
-=======
-    public LoginMenu(PersonManager pm,
-                     AttendanceManager am) {
-        this.pm = pm;
-        this.am = am;
-    }
+*/
 
-    public void displayLoginMenu() {
-
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("=== SMARTSITE LOGIN ===");
-        System.out.print("Enter your code: ");
-
-        String code = sc.nextLine().trim();
-
-        Person currentUser = pm.login(code);
-
-        if (currentUser == null) {
-            System.out.println("Invalid code or inactive account.");
-            return;
-        }
-
-        System.out.println("Login successful!");
-        System.out.println("Welcome: "
-                + currentUser.getFullName());
-
-        String role = currentUser.getRole();
-
-        if (role == null) {
-            System.out.println("Account has no role.");
-            return;
-        }
-
-        switch (role.trim().toUpperCase()) {
-
-            case "SAFETY_OFFICER":
-            case "SITE_MANAGER":
-                new MenuUserLv01()
-                    .displayMenuLv01(currentUser, am);
-                break;
-
-            case "WORKER":
-            case "CONTRACTOR":
-                new MenuUserLv02()
-                    .displayMenuLv02(currentUser, am);
-                break;
-
-            case "VISITOR":
-                new MenuUserLv03()
-                    .displayMenuLv03(currentUser, am);
-                break;
-
-            default:
-                System.out.println("Unsupported role: " + role);
-        }
-    }
->>>>>>> Stashed changes
-}//class */
 public class LoginMenu {
     private final PersonManager pm;
     private final AttendanceManager am;

@@ -12,11 +12,16 @@ public class WelcomeMenu {
      private final PersonManager pm;
      private final AttendanceManager am;
 
-            public WelcomeMenu(PersonManager pm,
-                               AttendanceManager am) {
+            public WelcomeMenu(PersonManager pm, AttendanceManager am) {
                 this.pm = pm;
                 this.am = am;
                 }
+            
+    public WelcomeMenu() {
+        this.pm = new PersonManager();
+        this.am = new AttendanceManager();
+    }
+
     public void displayWelcomeMenu(){
         Scanner sc = new Scanner(System.in);
         boolean running = true;
