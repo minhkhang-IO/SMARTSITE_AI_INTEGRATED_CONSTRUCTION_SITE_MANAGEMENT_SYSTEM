@@ -61,11 +61,6 @@ public class Visitor extends Person {
     }
 
     @Override
-    public String getRoleDescription() {
-        return "Site Manager oversees site operations, manages zone access, and approves safety logs (Access Level: " + accessLevel + ").";
-    }
-
-    @Override
     public String toFileLine() {
         return super.toFileLine() + "|" + visitPurpose + "|" + hostName;
     }
