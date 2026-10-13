@@ -1,8 +1,9 @@
+
 package ui;
-        
+
 import static ui.Draft.pause;
 
-public class MenuUserLv03 extends MenuUserLv00{    
+public class UserVisitorMenu extends MenuUserLv00{
     @Override
     public void displayOption(){
         System.out.println("01. Display your information");
@@ -39,6 +40,5 @@ public class MenuUserLv03 extends MenuUserLv00{
                 System.out.println("Invalid choice! Please select again");
                 pause();
         }
-    }
-    
+    }//chooseOption() 
 }//class
