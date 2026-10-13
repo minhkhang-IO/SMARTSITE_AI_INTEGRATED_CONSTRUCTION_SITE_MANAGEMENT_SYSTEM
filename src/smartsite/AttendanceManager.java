@@ -30,13 +30,13 @@ public class AttendanceManager {
       public boolean checkIn(Person person, Zone zone) {
 
     if (person == null || zone == null
-            || person.getid() == null
+            || person.getId() == null
             || zone.getZoneId() == null
             || !person.isActive()) {
         return false;
     }// Tham khao AI
 
-    String personId = person.getid();
+    String personId = person.getId();
 
     for (AttendanceRecord rec : records) {
         if (rec.getPersonId().equalsIgnoreCase(personId)
