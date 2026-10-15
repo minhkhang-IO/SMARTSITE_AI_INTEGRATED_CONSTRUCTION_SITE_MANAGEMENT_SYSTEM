@@ -9,14 +9,7 @@ import smartsite.PersonManager;
 import smartsite.AttendanceManager;
 
 public class WelcomeMenu {
-     private final PersonManager pm;
-     private final AttendanceManager am;
 
-            public WelcomeMenu(PersonManager pm,
-                               AttendanceManager am) {
-                this.pm = pm;
-                this.am = am;
-                }
     public void displayWelcomeMenu(){
         Scanner sc = new Scanner(System.in);
         boolean running = true;
@@ -59,7 +52,7 @@ public class WelcomeMenu {
             switch (choice){
                 case (1):
                     clearConsoleIDE();
-                    LoginMenu menuLogin = new LoginMenu(pm,am);
+                    LoginMenu menuLogin = new LoginMenu();
                     menuLogin.displayLoginMenu();
                     break;
                 case (2):
@@ -78,6 +71,7 @@ public class WelcomeMenu {
                     System.out.println("Invalid choice!!!");
                     break;
             }//switch-case choice
+
         } //while (running)
 
     } //displayWelcomeMenu()
